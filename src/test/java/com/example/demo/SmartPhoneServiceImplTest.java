@@ -130,7 +130,7 @@ class SmartPhoneServiceImplTest {
 		
 		List<SmartPhone> phones = sut.findAll();
 		SmartPhone result = sut.save(phone1);
-		assertNotEquals(3L, result.getId());
+		assertEquals(3L, result.getId());
 		assertEquals(phones.size(), sut.findAll().size());
 	}
 
