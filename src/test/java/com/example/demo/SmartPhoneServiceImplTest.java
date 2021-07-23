@@ -112,9 +112,10 @@ class SmartPhoneServiceImplTest {
 				true,
 				new Camera(2L, "front camera", 8.5));
 		
+		List<SmartPhone> phones = sut.findAll();
 		SmartPhone result = sut.save(phone1);
-		// TODO - check id se ha generado nuevo id
-		// TODO - que el tamaño de la lista si se ha incrementado
+		assertNotEquals(0, result.getId());
+		assertEquals(phones.size() + 1, sut.findAll().size());
 
 	}
 	
@@ -127,9 +128,10 @@ class SmartPhoneServiceImplTest {
 				true,
 				new Camera(2L, "front camera", 8.5));
 		
+		List<SmartPhone> phones = sut.findAll();
 		SmartPhone result = sut.save(phone1);
-		// TODO - check id - se mantiene id
-		// TODO - que el tamaño de la lista nose ha incrementado
+		assertNotEquals(3L, result.getId());
+		assertEquals(phones.size(), sut.findAll().size());
 	}
 
 
