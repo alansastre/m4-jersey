@@ -138,7 +138,8 @@ class M4JerseyApplicationTests {
 		// body
 		SmartPhone smartphone = response.getBody();
 		System.out.println(smartphone);
-		assertEquals(4, smartphone.getId());
+		assertNotNull(smartphone.getId());
+		assertNotEquals(0, smartphone.getId());
 		assertNotNull(smartphone.getBattery());
 		
 
