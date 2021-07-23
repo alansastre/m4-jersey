@@ -1,0 +1,1 @@
+web: java -jar target/m4-jersey-0.0.1-SNAPSHOT.jar
